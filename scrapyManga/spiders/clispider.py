@@ -16,11 +16,13 @@ class CliSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def extract_script_from_html(self, html_str, variable_name):
-
         if variable_name in html_str:
             regex_result = re.search(variable_name + r" += +(\[.*\])", html_str)
             return json.loads(regex_result[1])
         return []
+
+    def zfill_integer(self, some_string, zeros=3):
+        return re.sub(r'\d+', lambda x: x.group(0).zfill(zeros), some_string)
 
     def parse(self, response):
         raise NotImplementedError('{}.parse callback is not defined'.format(self.__class__.__name__))

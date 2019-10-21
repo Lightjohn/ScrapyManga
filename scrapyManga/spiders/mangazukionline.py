@@ -30,7 +30,7 @@ class MangaReaderSpider(CliSpider):
             name = meta['name']
             chapter = meta['chapter']
             image_name = image_url.split('/')[-1].zfill(3)
-            image_path = path.join(name, chapter, image_name)
+            image_path = self.zfill_integer(path.join(name, chapter, image_name))
             yield MetaFileItem(file_urls=[image_url], file_path=image_path, verbose=True)
 
     def parse(self, response):
