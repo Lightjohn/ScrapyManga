@@ -8,7 +8,7 @@
 import scrapy
 
 
-class MetaScrapyItem(scrapy.Item):
+class ScrapyMangaItem(scrapy.Item):
     # Compulsory ones
     file_urls = scrapy.Field()
     files = scrapy.Field()

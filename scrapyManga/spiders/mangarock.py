@@ -3,8 +3,8 @@ import string
 
 import scrapy
 import re
-from metascrapy.items import MetaFileItem
-from metascrapy.spiders import CliSpider
+from scrapyManga.items import MetaFileItem
+from scrapyManga.spiders import CliSpider
 
 
 class MangaReaderSpider(CliSpider):
@@ -13,12 +13,12 @@ class MangaReaderSpider(CliSpider):
     valid_chars = "-_.() %s%s" % (string.ascii_letters, string.digits)
 
     start_urls = [
-        "https://mangarock.com/manga/mrs-serie-100050716/chapter/mrs-chapter-100050777"
+        ""
     ]
 
     custom_settings = {
         'ITEM_PIPELINES': {
-            "metascrapy.metaPipeline.MetaFilePipeline": 1,
+            "scrapyManga.metaPipeline.MetaFilePipeline": 1,
         },
         'DOWNLOAD_DELAY': 0.1
     }

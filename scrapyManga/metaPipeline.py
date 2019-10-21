@@ -7,8 +7,8 @@ from scrapy.pipelines.images import FilesPipeline
 from scrapy.exceptions import DropItem
 
 
-from metascrapy.items import MetaFileItem
-from metascrapy.settings import FILES_STORE
+from scrapyManga.items import MetaFileItem
+from scrapyManga.settings import FILES_STORE
 logger = logging.getLogger(__name__)
 
 

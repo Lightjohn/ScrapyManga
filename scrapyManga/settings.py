@@ -8,18 +8,21 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
+from os import path
 
 BOT_NAME = 'scrapyManga'
-
+LOG_LEVEL = 'INFO'
 SPIDER_MODULES = ['scrapyManga.spiders']
 NEWSPIDER_MODULE = 'scrapyManga.spiders'
 
+FILES_STORE = path.join(path.expanduser('~'), 'ScrapyManga')
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scrapyManga (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

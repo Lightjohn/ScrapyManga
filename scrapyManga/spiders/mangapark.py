@@ -1,7 +1,7 @@
 import scrapy
 
-from metascrapy.items import MetaFileItem
-from metascrapy.spiders import CliSpider
+from scrapyManga.items import MetaFileItem
+from scrapyManga.spiders import CliSpider
 
 
 class MangaHereSpider(CliSpider):
