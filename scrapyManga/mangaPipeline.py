@@ -4,7 +4,6 @@ import scrapy
 import os
 import logging
 from scrapy.pipelines.images import FilesPipeline
-from scrapy.exceptions import DropItem
 
 
 from scrapyManga.items import MetaFileItem
@@ -12,7 +11,7 @@ from scrapyManga.settings import FILES_STORE
 logger = logging.getLogger(__name__)
 
 
-class MetaFilePipeline(FilesPipeline):
+class ScrapymangaPipeline(FilesPipeline):
 
     global_path = FILES_STORE
     received = 0

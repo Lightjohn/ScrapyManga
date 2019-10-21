@@ -16,13 +16,6 @@ class MangaReaderSpider(CliSpider):
         ""
     ]
 
-    custom_settings = {
-        'ITEM_PIPELINES': {
-            "scrapyManga.metaPipeline.MetaFilePipeline": 1,
-        },
-        'DOWNLOAD_DELAY': 0.1
-    }
-
     def create_url_series(self, series_oid):
         return f"https://api.mangarockhd.com/query/web{self.query_version}/info?oid={series_oid}&last=0"
 
