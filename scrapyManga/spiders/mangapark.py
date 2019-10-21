@@ -9,7 +9,7 @@ class MangaHereSpider(CliSpider):
     base_site = "https://mangapark.net"
 
     start_urls = [
-        "https://mangapark.net/manga/beastars-itagaki-paru/i1625171/1"
+        ""
     ]
 
     custom_settings = {
