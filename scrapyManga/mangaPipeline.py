@@ -8,6 +8,7 @@ from scrapy.pipelines.images import FilesPipeline
 
 from scrapyManga.items import MetaFileItem
 from scrapyManga.settings import FILES_STORE
+
 logger = logging.getLogger(__name__)
 
 
@@ -85,7 +86,7 @@ class ScrapymangaPipeline(FilesPipeline):
         if not isinstance(item, MetaFileItem):
             return item
         file_path = self.global_path + "/" + item["file_path"]
-        for file_url in item['file_urls']:
+        for file_url in item["file_urls"]:
             file_path_not_mri = file_path.replace(".mri", ".webp")
             self.received += 1
             if not self.file_exists(file_path_not_mri):
@@ -115,4 +116,9 @@ class ScrapymangaPipeline(FilesPipeline):
         return None
 
     def close_spider(self, spider):
-        logger.info("Received, %s items, downloaded %s, done %s", self.received, self.count, self.count_done)
+        logger.info(
+            "Received, %s items, downloaded %s, done %s",
+            self.received,
+            self.count,
+            self.count_done,
+        )

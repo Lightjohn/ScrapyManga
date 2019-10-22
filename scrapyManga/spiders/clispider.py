@@ -5,7 +5,6 @@ import scrapy
 
 
 class CliSpider(scrapy.Spider):
-
     def start_requests(self):
         try:
             self.start_urls = self.start_url.split(",")
@@ -22,7 +21,9 @@ class CliSpider(scrapy.Spider):
         return []
 
     def zfill_integer(self, some_string, zeros=3):
-        return re.sub(r'\d+', lambda x: x.group(0).zfill(zeros), some_string)
+        return re.sub(r"\d+", lambda x: x.group(0).zfill(zeros), some_string)
 
     def parse(self, response):
-        raise NotImplementedError('{}.parse callback is not defined'.format(self.__class__.__name__))
+        raise NotImplementedError(
+            "{}.parse callback is not defined".format(self.__class__.__name__)
+        )

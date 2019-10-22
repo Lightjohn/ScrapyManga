@@ -30,7 +30,3 @@ class MetaMasterNode(scrapy.Item):
     # Compulsory ones
     url = scrapy.Field()
     wallet = scrapy.Field()
-
-
-
-
