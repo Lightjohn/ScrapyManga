@@ -1,0 +1,13 @@
+language: python
+
+install:
+  - pip install black
+script:
+  - black .
+after_success:
+  - git config --global user.email "travis@travis-ci.org"
+  - git config --global user.name "Travis CI"
+  - git checkout master
+  - black .
+  - git commit -am "[ci skip] Travis AUTO FORMAT"
+  - git push https://${GH_TOKEN}@github.com/Lightjohn/ScrapyManga.git --quiet > /dev/null 2>&1
