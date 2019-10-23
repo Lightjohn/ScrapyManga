@@ -8,7 +8,7 @@ from scrapyManga.items import MetaFileItem
 from scrapyManga.spiders import CliSpider
 
 
-class MangaReaderSpider(CliSpider):
+class MangaZukiSpider(CliSpider):
     name = "mangazuki"
     valid_chars = "-_.() %s%s" % (string.ascii_letters, string.digits)
 

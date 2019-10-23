@@ -20,3 +20,7 @@ or
 ## Notes
 * Output path is set in `settings.py` see **FILES_STORE**
 * Default log level is `INFO`
+
+## Bonus
+
+`start.sh spiderName url1,url2`
